@@ -1,43 +1,13 @@
 <ion-view view-title="What do you feel like?">
   <ion-content class="padding">
     <div class="list">
-      <a class="item item-icon-left" href="#">
+      <a ng-repeat="restaurant in restaurants" class="item item-icon-left" href="#">
         <i class="icon ion-location"></i>
-        Restaurant 1
+        {{restaurant.name}}
         <span class="item-note">
-          Category
-        </span>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-location"></i>
-        Restaurant 2
-        <span class="item-note">
-          Category
-        </span>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-location"></i>
-        Restaurant 3
-        <span class="item-note">
-          Category
-        </span>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-location"></i>
-        Restaurant 4
-        <span class="item-note">
-          Category
-        </span>
-      </a>
-      <a class="item item-icon-left" href="#">
-        <i class="icon ion-location"></i>
-        Restaurant 5
-        <span class="item-note">
-          Category
+        {{restaurant.category}}
         </span>
       </a>
     </div>
-
-    {{helloRestaurant}}
   </ion-content>
 </ion-view>
