@@ -6,6 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services'])
+  .constant('API_URL', 'https://slow-food-august.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
