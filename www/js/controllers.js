@@ -1,6 +1,6 @@
 angular.module('slowfood.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('RestaurantsController', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
