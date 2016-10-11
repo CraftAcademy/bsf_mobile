@@ -1,6 +1,8 @@
 angular.module('slowfood.controllers', [])
 
-.controller('RestaurantsController', function($scope) {})
+.controller('RestaurantsController', function($scope) {
+  $scope.helloRestaurant = 'Hello from Restaurant Controller';
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -14,15 +16,5 @@ angular.module('slowfood.controllers', [])
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
   };
 });
