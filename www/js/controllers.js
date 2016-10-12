@@ -41,6 +41,19 @@ angular.module('slowfood.controllers', [])
             $scope.getRestaurantData(rest_id);
             $scope.modal.show();
         };
+
+        $scope.closeModal = function() {
+            $scope.modal.hide();
+        };
+
+        //Cleanup modal after we're done using it
+        $scope.$on('$destroy', function() {
+            $scope.modal.remove();
+        });
+        $scope.$on('modal.removed', function() {
+            // some action to perform after we hide the modal
+        });
+
         $scope.getRestaurantData = function (rest_id) {
             $ionicLoading.show({
                 template: 'Retrieving data...'
