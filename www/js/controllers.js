@@ -1,6 +1,6 @@
 angular.module('slowfood.controllers', [])
 
-.controller('getRestaurantsCtrl', function($scope, restaurantsFactory, $ionicLoading, $ionicPopup) {
+.controller('getRestaurantsCtrl', function($scope, restaurantsFactory, $ionicLoading, $ionicPopup, $ionicModal) {
     $scope.$on('$ionicView.enter', function () {
         $scope.getData();
     });
@@ -29,5 +29,19 @@ angular.module('slowfood.controllers', [])
 
     $scope.pickRestaurant = function(rest_id){
         console.log('You clicked pickRestaurant' + rest_id);
+        $ionicModal.fromTemplateUrl('show-restaurant.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.openModal = function () {
+            $scope.modal.show();
+        }
     };
+})
+
+.controller('showRestaurantCtrl', function($scope, showRestaurantsFactory, $ionicModal) {
+
 });
