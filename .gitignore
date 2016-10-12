@@ -3,4 +3,4 @@ platforms/
 plugins/
 .idea/
 .DS_Store
-bower_components/
+www/lib
