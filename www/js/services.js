@@ -65,4 +65,8 @@ angular.module('slowfood.services', [])
       return restaurants;
     }
   };
+})
+
+.factory('Restaurants', function($resource, API_URL) {
+  return $resource(API_URL + '/restaurants', {});
 });

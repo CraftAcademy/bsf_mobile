@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services'])
+angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services', 'ngResource'])
   .constant('API_URL', 'https://slow-food-august.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
