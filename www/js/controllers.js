@@ -56,10 +56,3 @@ angular.module('slowfood.controllers', [])
         };
     };
 });
-//
-// .controller('showRestaurantCtrl', function($scope, showRestaurantsFactory, $ionicModal) {
-//     // $scope.$on('$ionicView.enter', function () {
-//     //     $scope.getRestaurantData();
-//     // });
-//
-// });
