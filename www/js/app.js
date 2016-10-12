@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services'])
+angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services', 'uiGmapgoogle-maps'])
   .constant('API_URL', 'https://slow-food-august.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
@@ -23,7 +23,13 @@ angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services'
     }
   });
 })
-
+.config(function(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    key: 'AIzaSyDksFPPj-FomswnVnuVeNMdGBYb1nA4pas',
+    v: '3.25', //defaults to latest 3.X anyhow
+    libraries: 'weather,geometry,visualization'
+  });
+})
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
