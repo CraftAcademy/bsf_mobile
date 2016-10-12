@@ -38,11 +38,28 @@ angular.module('slowfood.controllers', [])
 
         $scope.openModal = function () {
             console.log('open modal method');
+            $scope.getRestaurantData(rest_id);
             $scope.modal.show();
-        }
+        };
+        $scope.getRestaurantData = function (rest_id) {
+            $ionicLoading.show({
+                template: 'Retrieving data...'
+            });
+            restaurantsFactory.query({id: rest_id}, function (response) {
+                $scope.restaurant = response;
+                console.log(response);
+                $ionicLoading.hide();
+            }, function (error) {
+                $ionicLoading.hide();
+                $scope.showAlert('Failure', error.statusText);
+            })
+        };
     };
-})
-
-.controller('showRestaurantCtrl', function($scope, showRestaurantsFactory, $ionicModal) {
-
 });
+//
+// .controller('showRestaurantCtrl', function($scope, showRestaurantsFactory, $ionicModal) {
+//     // $scope.$on('$ionicView.enter', function () {
+//     //     $scope.getRestaurantData();
+//     // });
+//
+// });
