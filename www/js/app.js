@@ -26,7 +26,7 @@ angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services'
 .config(function(uiGmapGoogleMapApiProvider) {
   uiGmapGoogleMapApiProvider.configure({
     key: 'AIzaSyDksFPPj-FomswnVnuVeNMdGBYb1nA4pas',
-    v: '3.20', //defaults to latest 3.X anyhow
+    v: '3.25', //defaults to latest 3.X anyhow
     libraries: 'weather,geometry,visualization'
   });
 })
