@@ -4,5 +4,14 @@
         <div style="text-align: center;">
             <h1>{{restaurant.name}}</h1>
         </div>
+        <div class='list'>
+          <a ng-repeat='menu in restaurant.menus' class='item item-icon-left' href='#' ng-click="">
+            <i class='icon ion-location'></i>
+            {{menu.title}}
+            <span class='item-note'>
+            {{restaurant.category}}
+            </span>
+          </a>
+        </div>
     </ion-content>
 </ion-view>
