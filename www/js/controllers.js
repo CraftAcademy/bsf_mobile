@@ -1,6 +1,6 @@
 angular.module('slowfood.controllers', [])
 
-.controller('getRestaurantsCtrl', function($scope, restaurantsFactory, $ionicLoading) {
+.controller('getRestaurantsCtrl', function($scope, restaurantsFactory, $ionicLoading, $ionicPopup) {
     $scope.$on('$ionicView.enter', function () {
         $scope.getData();
     });
@@ -8,9 +8,8 @@ angular.module('slowfood.controllers', [])
         $ionicLoading.show({
             template: 'Retrieving data...'
         });
-        restaurantsFactory.query({}, function(response){
-            console.log(response);
-            $state.go('app.restaurants', {restaurants: response});
+        restaurantsFactory.get({}, function(response){
+            $scope.restaurants = response.restaurants;
             $ionicLoading.hide();
         }, function(error){
             $ionicLoading.hide();
