@@ -5,7 +5,7 @@
       </ui-gmap-markers>
     </ui-gmap-google-map>
     <div class='list'>
-      <a ng-repeat='restaurant in restaurants' class='item item-icon-left' href='#'>
+      <a ng-repeat='restaurant in restaurants' class='item item-icon-left' href='#' ng-click="pickRestaurant(restaurant.id)">
         <i class='icon ion-location'></i>
         {{restaurant.name}}
         <span class='item-note'>
