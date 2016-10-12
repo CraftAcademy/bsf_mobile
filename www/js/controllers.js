@@ -4,9 +4,4 @@ angular.module('slowfood.controllers', [])
 
     $scope.restaurants = FakeRestaurants.all();
     $scope.map = { center: { latitude: 57.6945602, longitude: 11.9745962 }, zoom: 13 };
-
-    uiGmapGoogleMapApi.then(function(maps) {
-
-    });
-
 });
