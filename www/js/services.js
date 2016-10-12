@@ -1,50 +1,68 @@
-angular.module('starter.services', [])
+angular.module('slowfood.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+.factory('FakeRestaurants', function() {
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
+  var restaurants = [{
+    "id": 2,
+    "name": "Homemade Thai Food Court",
+    "description": "Libero voluptatibus facere necessitatibus omnis consequatur delectus molestiae. Corrupti quia eaque. Numquam pariatur necessitatibus occaecati dolorem.",
+    "user_id": null,
+    "street": null,
+    "zipcode": null,
+    "town": null,
+    "latitude": 57.6945602,
+    "longitude": 11.9745962,
+    "category": "Thai"
   }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    "id": 3,
+    "name": "Skitbra Vegan Place",
+    "description": "Tempora voluptatem vero ad vitae nostrum consequatur beatae. Nobis consequatur laudantium tenetur a enim.",
+    "user_id": null,
+    "street": null,
+    "zipcode": null,
+    "town": null,
+    "latitude": 57.6977848,
+    "longitude": 11.9708588,
+    "category": "Vegan"
   }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    "id": 4,
+    "name": "Local Vegan House",
+    "description": "Architecto voluptate sed dolore est deleniti. Et incidunt consequatur.",
+    "user_id": null,
+    "street": null,
+    "zipcode": null,
+    "town": null,
+    "latitude": 57.6959108,
+    "longitude": 11.9734373,
+    "category": "Vegan"
   }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    "id": 5,
+    "name": "Homemade Thai House",
+    "description": "Non sit provident. Quo dolorem expedita. Quam voluptas ab.",
+    "user_id": null,
+    "street": null,
+    "zipcode": null,
+    "town": null,
+    "latitude": 57.7072458,
+    "longitude": 11.96967,
+    "category": "Thai"
   }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
+    "id": 6,
+    "name": "Skitbra Vegan Place",
+    "description": "Sed et sit consequatur voluptatem. Mollitia non sint corporis fugiat placeat qui. Ea repudiandae debitis quos.",
+    "user_id": null,
+    "street": null,
+    "zipcode": null,
+    "town": null,
+    "latitude": 57.6975531,
+    "longitude": 11.9751022,
+    "category": "Vegan"
+  }
+];
 
   return {
     all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
+      return restaurants;
     }
   };
 });
