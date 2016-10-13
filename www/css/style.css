@@ -1,2 +1,10 @@
 /* Empty. Add your own CSS if you like */
 .angular-google-map-container { height: 400px; }
+
+.show-rest-name {
+  background-color: rgba(255,159,79,0.8);
+}
+
+.item-menus {
+  background-color: rgba(255,159,79,0.8);
+}

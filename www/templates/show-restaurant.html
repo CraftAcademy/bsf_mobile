@@ -1,0 +1,17 @@
+<!--<div ng-controller="showRestaurantCtrl"></div>-->
+<ion-view view-title='{{restaurant.name}}'>
+    <ion-content class='padding'>
+        <div style="text-align: center;">
+            <h1 class='show-rest-name'>{{restaurant.name}}</h1>
+        </div>
+        <div style="text-align: center;">
+            <h4 class'rest-desc'>{{restaurant.description}}</h4>
+        </div>
+        <div>
+          <a ng-repeat='menu in restaurant.menus' class='item item-icon-left item-menus' href='#' ng-click="">
+            <i class='icon ion-android-restaurant'></i>
+            {{menu.title}}
+          </a>
+        </div>
+    </ion-content>
+</ion-view>
