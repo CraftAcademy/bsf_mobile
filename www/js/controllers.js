@@ -65,6 +65,7 @@ angular.module('slowfood.controllers', [])
             });
             restaurantsFactory.query({id: rest_id}, function (response) {
                 $scope.restaurant = response;
+                var restaurant_response = response;
                 $ionicLoading.hide();
             }, function (error) {
                 $ionicLoading.hide();
@@ -79,10 +80,9 @@ angular.module('slowfood.controllers', [])
             animation: 'slide-in-up'
         }).then(function (modal) {
             $scope.modal = modal;
+            $scope.currentMenuIndex = index;
             $scope.openModal();
         });
-        // restaurant.menus.where(title: menu_title)
-        console.log($scope.restaurant + "index:" + index);
     };
 
     $ionicPlatform.ready(function() {
