@@ -93,7 +93,28 @@ angular.module('slowfood.controllers', [])
 
     })
 
-    .controller('loginCtrl', function () {
+    .controller('loginCtrl', function ($rootScope, $scope, $ionicLoading, $auth) {
+        $scope.loginData = {};
+
+        $scope.doLogin = function() {
+            $ionicLoading.show({
+                template: 'Logging in...'
+            });
+            $auth.submitLogin($scope.loginData)
+                .then(function (response) {
+                    $ionicLoading.hide();
+                    $scope.state.go('tab-restaurants');
+                })
+                .catch(function (error) {
+                    $ionicLoading.hide();
+                    $scope.errorMessage = error;
+                })
+
+        };
+
+        $rootScope.$on('auth:login-success', function(ev, user){
+            $scope.currentUser = angular.extend(user, $auth.retrieveData('auth_headers'));
+        });
 
     });
 
