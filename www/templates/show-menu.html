@@ -7,10 +7,30 @@
             <h4 class='rest-desc'>{{restaurant.name}}: {{restaurant.menus[currentMenuIndex].title}}</h4>
         </div>
         <div>
-            <a ng-repeat='dish in startersArray' class='item item-icon-left item-menus' href='#' ng-click="">
-                <i class='icon ion-android-restaurant'></i>
-                {{menu.title}}
-            </a>
+            <ion-item-group>
+                <ion-item-divider>Starters</ion-item-divider>
+                <ion-item ng-repeat='dish in startersArray' class='item item-icon-left item-menus' ng-click="">
+                    <i class='icon ion-android-restaurant'></i>
+                    {{dish.name}}
+                </ion-item>
+
+            </ion-item-group>
+            <ion-item-group>
+                <ion-item-divider>Mains</ion-item-divider>
+                <ion-item ng-repeat='dish in mainsArray' class='item item-icon-left item-menus' ng-click="">
+                    <i class='icon ion-android-restaurant'></i>
+                    {{dish.name}}
+                </ion-item>
+                <ion-item-divider light></ion-item-divider>
+            </ion-item-group>
+            <ion-item-group>
+                <ion-item-divider>Desserts</ion-item-divider>
+                <ion-item ng-repeat='dish in dessertsArray' class='item item-icon-left item-menus' ng-click="">
+                    <i class='icon ion-android-restaurant'></i>
+                    {{dish.name}}
+                </ion-item>
+            </ion-item-group>
+
         </div>
     </ion-content>
 </ion-view>

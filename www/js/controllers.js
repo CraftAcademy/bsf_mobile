@@ -108,6 +108,9 @@ angular.module('slowfood.controllers', [])
                     return true;
             }
         }
+        $scope.startersArray = startersArray;
+        $scope.mainsArray = mainsArray;
+        $scope.dessertsArray = dessertsArray;
     };
 
     $ionicPlatform.ready(function() {
