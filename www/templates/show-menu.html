@@ -8,25 +8,24 @@
         </div>
         <div>
             <ion-item-group>
-                <ion-item-divider>Starters</ion-item-divider>
-                <ion-item ng-repeat='dish in startersArray' class='item item-icon-left item-menus' ng-click="">
-                    <i class='icon ion-android-restaurant'></i>
+                <ion-item-divider ng-hide='startersArray.length==0'>Starters</ion-item-divider>
+                <ion-item ng-repeat='dish in startersArray' class='item item-menus' ng-click="">
                     {{dish.name}}
+                    <div class="dish-price">
+                        {{dish.price}}
+                    </div>
+                    <button class="button dish-button">Add to Cart</button>
                 </ion-item>
-
             </ion-item-group>
             <ion-item-group>
-                <ion-item-divider>Mains</ion-item-divider>
+                <ion-item-divider ng-hide='mainsArray.length==0'>Mains</ion-item-divider>
                 <ion-item ng-repeat='dish in mainsArray' class='item item-icon-left item-menus' ng-click="">
-                    <i class='icon ion-android-restaurant'></i>
                     {{dish.name}}
                 </ion-item>
-                <ion-item-divider light></ion-item-divider>
             </ion-item-group>
             <ion-item-group>
-                <ion-item-divider>Desserts</ion-item-divider>
+                <ion-item-divider ng-hide='dessertsArray.length==0'>Desserts</ion-item-divider>
                 <ion-item ng-repeat='dish in dessertsArray' class='item item-icon-left item-menus' ng-click="">
-                    <i class='icon ion-android-restaurant'></i>
                     {{dish.name}}
                 </ion-item>
             </ion-item-group>
