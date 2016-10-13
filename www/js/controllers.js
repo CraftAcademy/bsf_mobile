@@ -31,8 +31,6 @@ angular.module('slowfood.controllers', [])
         });
     };
 
-    $scope.map = { center: { latitude: 57.6945602, longitude: 11.9745962 }, zoom: 13 };
-
     $scope.pickRestaurant = function(rest_id){
         $ionicModal.fromTemplateUrl('templates/show-restaurant.html', {
             scope: $scope,
