@@ -30,9 +30,7 @@ angular.module('slowfood.controllers', [])
             // Place some action here if needed...
         });
     };
-
-    $scope.map = { center: { latitude: 57.6945602, longitude: 11.9745962 }, zoom: 13 };
-
+    
     var restaurant_response;
 
     $scope.pickRestaurant = function(rest_id){
