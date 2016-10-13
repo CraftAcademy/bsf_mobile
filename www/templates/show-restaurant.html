@@ -7,8 +7,8 @@
         <div style="text-align: center;">
             <h4 class'rest-desc'>{{restaurant.description}}</h4>
         </div>
-        <div class='list-menus'>
-          <a ng-repeat='menu in restaurant.menus' class='item item-icon-left' href='#' ng-click="">
+        <div>
+          <a ng-repeat='menu in restaurant.menus' class='item item-icon-left item-menus' href='#' ng-click="">
             <i class='icon ion-android-restaurant'></i>
             {{menu.title}}
           </a>
