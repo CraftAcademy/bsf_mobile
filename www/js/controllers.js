@@ -43,7 +43,6 @@ angular.module('slowfood.controllers', [])
         });
 
         $scope.openModal = function () {
-            console.log('open modal method');
             $scope.getRestaurantData(rest_id);
             $scope.modal.show();
         };
@@ -66,13 +65,24 @@ angular.module('slowfood.controllers', [])
             });
             restaurantsFactory.query({id: rest_id}, function (response) {
                 $scope.restaurant = response;
-                console.log(response);
                 $ionicLoading.hide();
             }, function (error) {
                 $ionicLoading.hide();
                 $scope.showAlert('Failure', error.statusText);
             })
         };
+    };
+
+    $scope.pickMenu = function(index) {
+        $ionicModal.fromTemplateUrl('templates/show-menu.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.openModal();
+        });
+        // restaurant.menus.where(title: menu_title)
+        console.log($scope.restaurant + "index:" + index);
     };
 
     $ionicPlatform.ready(function() {
