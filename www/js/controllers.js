@@ -33,6 +33,8 @@ angular.module('slowfood.controllers', [])
 
     $scope.map = { center: { latitude: 57.6945602, longitude: 11.9745962 }, zoom: 13 };
 
+    var restaurant_response;
+
     $scope.pickRestaurant = function(rest_id){
         $ionicModal.fromTemplateUrl('templates/show-restaurant.html', {
             scope: $scope,
@@ -65,7 +67,7 @@ angular.module('slowfood.controllers', [])
             });
             restaurantsFactory.query({id: rest_id}, function (response) {
                 $scope.restaurant = response;
-                var restaurant_response = response;
+                restaurant_response = response;
                 $ionicLoading.hide();
             }, function (error) {
                 $ionicLoading.hide();
@@ -81,8 +83,31 @@ angular.module('slowfood.controllers', [])
         }).then(function (modal) {
             $scope.modal = modal;
             $scope.currentMenuIndex = index;
+            $scope.getCategoryArrays(index);
             $scope.openModal();
         });
+    };
+
+    $scope.getCategoryArrays = function(index) {
+        var startersArray = [];
+        var mainsArray = [];
+        var dessertsArray = [];
+        var menu = restaurant_response.menus[index];
+        for (i = 0; i < menu.dishes.length; i++) {
+            switch(menu.dishes[i].category) {
+                case 'Starters':
+                    startersArray.push(menu.dishes[i]);
+                    break;
+                case 'Mains':
+                    mainsArray.push(menu.dishes[i]);
+                    break;
+                case 'Desserts':
+                    dessertsArray.push(menu.dishes[i]);
+                    break;
+                default:
+                    return true;
+            }
+        }
     };
 
     $ionicPlatform.ready(function() {
