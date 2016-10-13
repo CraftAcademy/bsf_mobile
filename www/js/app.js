@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services', 'ngResource', 'uiGmapgoogle-maps', 'ngCordova'])
+angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services', 'ngResource', 'uiGmapgoogle-maps', 'ngCordova', 'ng-token-auth'])
     .constant('API_URL', 'https://slow-food-august.herokuapp.com/api/v1')
 
     .run(function ($ionicPlatform) {
@@ -70,4 +70,9 @@ angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services'
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/tab/restaurants');
 
+    })
+    .config(function ($authProvider, API_URL){
+        $authProvider.configure({
+            apiUrl: API_URL
+        })
     });
