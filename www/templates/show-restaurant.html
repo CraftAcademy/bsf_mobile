@@ -3,14 +3,12 @@
     <ion-content class='padding'>
         <div style="text-align: center;">
             <h1>{{restaurant.name}}</h1>
+            <h4>{{restaurant.description}}</h4>
         </div>
         <div class='list'>
           <a ng-repeat='menu in restaurant.menus' class='item item-icon-left' href='#' ng-click="">
-            <i class='icon ion-location'></i>
+            <i class='icon ion-android-restaurant'></i>
             {{menu.title}}
-            <span class='item-note'>
-            {{restaurant.category}}
-            </span>
           </a>
         </div>
     </ion-content>
