@@ -66,7 +66,6 @@ angular.module('slowfood.controllers', [])
             });
             restaurantsFactory.query({id: rest_id}, function (response) {
                 $scope.restaurant = response;
-                console.log(response);
                 $ionicLoading.hide();
             }, function (error) {
                 $ionicLoading.hide();
