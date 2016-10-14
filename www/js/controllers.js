@@ -136,9 +136,7 @@ angular.module('slowfood.controllers', [])
         });
         cartsFactory.post({dish_id: dish_id}).$promise.then( function (response) {
             $scope.cart = response;
-            console.log($scope.cart);
             $rootScope.cart_id = response.cart_id;
-            console.log($rootScope.cart_id);
             $ionicLoading.hide();
         }, function (error) {
             $ionicLoading.hide();
@@ -147,14 +145,10 @@ angular.module('slowfood.controllers', [])
     };
 
     $scope.addToExistingCart = function (dish_id) {
-        console.log($rootScope.cart_id);
-
         $ionicLoading.show({
             template: 'Adding to cart'
         });
         cartsFactory.put({id:$scope.cart.cart_id, dish_id: dish_id}, function (response) {
-            console.log($scope.cart.cart_id);
-            console.log($rootScope.cart_id + response.dishes[0].dish_id);
             $ionicLoading.hide();
         }, function (error) {
             $ionicLoading.hide();
