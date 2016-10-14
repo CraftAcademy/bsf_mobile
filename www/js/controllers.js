@@ -93,7 +93,7 @@ angular.module('slowfood.controllers', [])
 
     })
 
-    .controller('loginCtrl', function ($rootScope, $scope, $ionicLoading, $auth) {
+    .controller('loginCtrl', function ($rootScope, $scope, $ionicLoading, $auth, $location) {
         $scope.loginData = {};
 
         $scope.doLogin = function() {
@@ -103,8 +103,7 @@ angular.module('slowfood.controllers', [])
             $auth.submitLogin($scope.loginData)
                 .then(function (response) {
                     $ionicLoading.hide();
-                    // $scope.state.go('tab-restaurants');
-                    console.log('um... it worked?' + $scope.currentUser.name);
+                    $location.path('tab-restaurants');
                 })
                 .catch(function (error) {
                     $ionicLoading.hide();
