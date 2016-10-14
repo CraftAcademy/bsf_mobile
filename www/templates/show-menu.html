@@ -1,0 +1,35 @@
+<ion-view view-title='{{restaurant.name}} '>
+    <ion-content class='padding'>
+        <div style="text-align: center;">
+            <h4 class='rest-desc'>{{restaurant.name}}: {{restaurant.menus[currentMenuIndex].title}}</h4>
+        </div>
+        <div>
+            <ion-item-group>
+                <ion-item-divider class="item item-divider" ng-hide='startersArray.length==0'>Starters</ion-item-divider>
+                <ion-item ng-repeat='dish in startersArray' class='item' ng-click="">
+                    <span class='left'>{{dish.name}}, <span class="dish-price">{{dish.price}} kr</span></span>
+                    <span class='right'><button class="button button-small button-orange">Add to Cart</button></span>
+                    <span class='right'><p class="button button-small button-stable">More info</p>&nbsp;</span>
+
+                </ion-item>
+            </ion-item-group>
+            <ion-item-group>
+                <ion-item-divider class="item item-divider" ng-hide='mainsArray.length==0'>Mains</ion-item-divider>
+                <ion-item ng-repeat='dish in mainsArray' class='item' ng-click="">
+                    <span class='left'>{{dish.name}}, <span class="dish-price">{{dish.price}} kr</span></span>
+                    <span class='right'><button class="button button-small button-orange">Add to Cart</button></span>
+                    <span class='right'><p class="button button-small button-stable">More info</p>&nbsp;</span>
+                </ion-item>
+            </ion-item-group>
+            <ion-item-group>
+                <ion-item-divider class="item item-divider" ng-hide='dessertsArray.length==0'>Desserts</ion-item-divider>
+                <ion-item ng-repeat='dish in dessertsArray' class='item' ng-click="">
+                    <span class='left'>{{dish.name}}, <span class="dish-price">{{dish.price}} kr</span></span>
+                    <span class='right'><button class="button button-small button-orange">Add to Cart</button></span>
+                    <span class='right'><p class="button button-small button-stable">More info</p>&nbsp;</span>
+                </ion-item>
+            </ion-item-group>
+
+        </div>
+    </ion-content>
+</ion-view>

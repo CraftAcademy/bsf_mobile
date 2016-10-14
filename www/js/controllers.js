@@ -30,6 +30,8 @@ angular.module('slowfood.controllers', [])
             // Place some action here if needed...
         });
     };
+    
+    var restaurant_response;
 
     $scope.pickRestaurant = function(rest_id){
         $ionicModal.fromTemplateUrl('templates/show-restaurant.html', {
@@ -41,7 +43,6 @@ angular.module('slowfood.controllers', [])
         });
 
         $scope.openModal = function () {
-            console.log('open modal method');
             $scope.getRestaurantData(rest_id);
             $scope.modal.show();
         };
@@ -64,12 +65,50 @@ angular.module('slowfood.controllers', [])
             });
             restaurantsFactory.query({id: rest_id}, function (response) {
                 $scope.restaurant = response;
+                restaurant_response = response;
                 $ionicLoading.hide();
             }, function (error) {
                 $ionicLoading.hide();
                 $scope.showAlert('Failure', error.statusText);
             })
         };
+    };
+
+    $scope.pickMenu = function(index) {
+        $ionicModal.fromTemplateUrl('templates/show-menu.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+            $scope.currentMenuIndex = index;
+            $scope.getCategoryArrays(index);
+            $scope.openModal();
+        });
+    };
+
+    $scope.getCategoryArrays = function(index) {
+        var startersArray = [];
+        var mainsArray = [];
+        var dessertsArray = [];
+        var menu = restaurant_response.menus[index];
+        for (i = 0; i < menu.dishes.length; i++) {
+            switch(menu.dishes[i].category) {
+                case 'Starters':
+                    startersArray.push(menu.dishes[i]);
+                    break;
+                case 'Mains':
+                    mainsArray.push(menu.dishes[i]);
+                    break;
+                case 'Desserts':
+                    dessertsArray.push(menu.dishes[i]);
+                    break;
+                default:
+                    return true;
+            }
+        }
+        $scope.startersArray = startersArray;
+        $scope.mainsArray = mainsArray;
+        $scope.dessertsArray = dessertsArray;
     };
 
     $ionicPlatform.ready(function() {
