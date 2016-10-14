@@ -33,7 +33,6 @@ angular.module('slowfood.controllers', [])
     
     var restaurant_response;
 
-
     $scope.pickRestaurant = function(rest_id){
         $ionicModal.fromTemplateUrl('templates/show-restaurant.html', {
             scope: $scope,
