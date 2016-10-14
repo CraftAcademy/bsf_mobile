@@ -147,7 +147,7 @@ angular.module('slowfood.controllers', [])
         $ionicLoading.show({
             template: 'Adding to cart'
         });
-        cartsFactory.post({dish_id: dish_id}, function (response) {
+        cartsFactory.post({id: $rootScope.cart_id, dish_id: dish_id}, function (response) {
             $rootScope.cart_id = response.cart_id;
             $ionicLoading.hide();
         }, function (error) {

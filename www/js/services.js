@@ -10,7 +10,7 @@ angular.module('slowfood.services', [])
             })
     })
     .factory('cartsFactory', function ($resource, API_URL) {
-        return $resource(API_URL + '/carts', {}, {
+        return $resource(API_URL + '/carts/:id', {}, {
             'post': {
                 method: 'POST'
             },
