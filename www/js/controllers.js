@@ -134,21 +134,29 @@ angular.module('slowfood.controllers', [])
         $ionicLoading.show({
             template: 'Adding to cart'
         });
-        cartsFactory.post({dish_id: dish_id}, function (response) {
+        cartsFactory.post({dish_id: dish_id}).$promise.then( function (response) {
+            $scope.cart = response;
+            console.log($scope.cart);
             $rootScope.cart_id = response.cart_id;
+            console.log($rootScope.cart_id);
             $ionicLoading.hide();
         }, function (error) {
             $ionicLoading.hide();
             $scope.showAlert('Failure', error.statusText);
         })
-    }
+    };
 
     $scope.addToExistingCart = function (dish_id) {
+        console.log($rootScope.cart_id);
+
         $ionicLoading.show({
             template: 'Adding to cart'
         });
-        cartsFactory.post({id: $rootScope.cart_id, dish_id: dish_id}, function (response) {
-            $rootScope.cart_id = response.cart_id;
+        // var cart_id = $scope.cart.cart_id;
+        // cartsFactory.returnCart($scope.cart.cart_id);
+        cartsFactory.fuckfuckfuck({id: $scope.cart.cart_id}, function (response) {
+            console.log($scope.cart.cart_id);
+            //console.log($rootScope.cart_id + response);
             $ionicLoading.hide();
         }, function (error) {
             $ionicLoading.hide();
