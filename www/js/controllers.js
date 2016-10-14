@@ -152,11 +152,9 @@ angular.module('slowfood.controllers', [])
         $ionicLoading.show({
             template: 'Adding to cart'
         });
-        // var cart_id = $scope.cart.cart_id;
-        // cartsFactory.returnCart($scope.cart.cart_id);
-        cartsFactory.fuckfuckfuck({id: $scope.cart.cart_id}, function (response) {
+        cartsFactory.put({id:$scope.cart.cart_id, dish_id: dish_id}, function (response) {
             console.log($scope.cart.cart_id);
-            //console.log($rootScope.cart_id + response);
+            console.log($rootScope.cart_id + response.dishes[0].dish_id);
             $ionicLoading.hide();
         }, function (error) {
             $ionicLoading.hide();

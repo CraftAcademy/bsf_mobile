@@ -13,11 +13,11 @@ angular.module('slowfood.services', ['ngResource'])
     .factory('cartsFactory', function ($resource, API_URL, $rootScope) {
         var cart_id = $rootScope.cart_id;
         console.log('from cartsFactory: ' + cart_id);
-        return $resource(API_URL + '/carts/:id', {}, {
+        return $resource(API_URL + '/carts/:id', {id: '@id'}, {
             'post': {
                 method: 'POST'
             },
-            'fuckfuckfuck': {
+            'put': {
                 method: 'PUT'
             }
         });
