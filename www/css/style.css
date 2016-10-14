@@ -8,3 +8,13 @@
 .item-menus {
   background-color: rgba(255,159,79,0.8);
 }
+
+.cancel-icon {
+  font-size: 400%;
+  color: #8f8f8f;
+  opacity: .5;
+  position: fixed;
+  bottom: .2em;
+  right: .3em;
+  z-index: 99;
+}
