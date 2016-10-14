@@ -135,7 +135,6 @@ angular.module('slowfood.controllers', [])
             template: 'Adding to cart'
         });
         cartsFactory.post({dish_id: dish_id}, function (response) {
-            $scope.cart = response;
             $rootScope.cart_id = response.cart_id;
             $ionicLoading.hide();
         }, function (error) {
@@ -149,7 +148,6 @@ angular.module('slowfood.controllers', [])
             template: 'Adding to cart'
         });
         cartsFactory.post({dish_id: dish_id}, function (response) {
-            $scope.cart = response;
             $rootScope.cart_id = response.cart_id;
             $ionicLoading.hide();
         }, function (error) {
