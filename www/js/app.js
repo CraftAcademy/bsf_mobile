@@ -8,6 +8,7 @@
 
 angular.module('slowfood', ['ionic', 'slowfood.controllers', 'slowfood.services', 'ngResource', 'uiGmapgoogle-maps', 'ngCordova', 'ng-token-auth'])
     .constant('API_URL', 'https://slow-food-august.herokuapp.com/api/v1')
+    // .constant('API_URL', 'https://sfa-sandbox.herokuapp.com/api/v1')
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
