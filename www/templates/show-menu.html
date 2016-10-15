@@ -5,10 +5,16 @@
         </div>
         <div>
             <ion-item-group>
-                <ion-item-divider class="item item-divider" ng-hide='startersArray.length==0'>Starters</ion-item-divider>
+                <ion-item-divider class="item item-divider" ng-hide='startersArray.length==0'>Starters
+                </ion-item-divider>
                 <ion-item ng-repeat='dish in startersArray' class='item' ng-click="">
                     <span class='left'>{{dish.name}}, <span class="dish-price">{{dish.price}} kr</span></span>
-                    <span class='right'><button class="button button-small button-orange">Add to Cart</button></span>
+                    <span class='right'>
+                        <button class="button button-small button-orange" ng-click="addToCart(dish.id)" ng-hide="cart">Add to Cart</button>
+                                                <button class="button button-small button-orange"
+                                                        ng-click="addToExistingCart(dish.id)"
+                                                        ng-show="cart">Add to Cart</button>
+                    </span>
                     <span class='right'><p class="button button-small button-stable">More info</p>&nbsp;</span>
 
                 </ion-item>
@@ -17,19 +23,33 @@
                 <ion-item-divider class="item item-divider" ng-hide='mainsArray.length==0'>Mains</ion-item-divider>
                 <ion-item ng-repeat='dish in mainsArray' class='item' ng-click="">
                     <span class='left'>{{dish.name}}, <span class="dish-price">{{dish.price}} kr</span></span>
-                    <span class='right'><button class="button button-small button-orange">Add to Cart</button></span>
+                    <span class='right'>
+                        <button class="button button-small button-orange" ng-click="addToCart(dish.id)" ng-hide="cart">Add to Cart</button>
+                                                <button class="button button-small button-orange"
+                                                        ng-click="addToExistingCart(dish.id)"
+                                                        ng-show="cart">Add to Cart</button>
+                    </span>
                     <span class='right'><p class="button button-small button-stable">More info</p>&nbsp;</span>
                 </ion-item>
             </ion-item-group>
             <ion-item-group>
-                <ion-item-divider class="item item-divider" ng-hide='dessertsArray.length==0'>Desserts</ion-item-divider>
+                <ion-item-divider class="item item-divider" ng-hide='dessertsArray.length==0'>Desserts
+                </ion-item-divider>
                 <ion-item ng-repeat='dish in dessertsArray' class='item' ng-click="">
                     <span class='left'>{{dish.name}}, <span class="dish-price">{{dish.price}} kr</span></span>
-                    <span class='right'><button class="button button-small button-orange">Add to Cart</button></span>
+                    <span class='right'>
+                        <button class="button button-small button-orange" ng-click="addToCart(dish.id)" ng-hide="cart">Add to Cart</button>
+                                                <button class="button button-small button-orange"
+                                                        ng-click="addToExistingCart(dish.id)"
+                                                        ng-show="cart">Add to Cart</button>
+                    </span>
                     <span class='right'><p class="button button-small button-stable">More info</p>&nbsp;</span>
                 </ion-item>
             </ion-item-group>
 
         </div>
     </ion-content>
+    <div class="close-button" ng-click="closeModal()">
+        <i class='icon cancel-icon ion-android-cancel'></i>
+    </div>
 </ion-view>

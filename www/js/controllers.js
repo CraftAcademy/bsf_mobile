@@ -1,6 +1,6 @@
 angular.module('slowfood.controllers', [])
 
-.controller('getRestaurantsCtrl', function($scope, restaurantsFactory,
+.controller('getRestaurantsCtrl', function($scope, $rootScope, restaurantsFactory, cartsFactory,
                                            $ionicLoading, $ionicPopup, $cordovaGeolocation,
                                            $ionicPlatform,
                                            $ionicModal)
@@ -129,5 +129,31 @@ angular.module('slowfood.controllers', [])
         });
 
     });
+
+    $scope.addToCart = function (dish_id) {
+        $ionicLoading.show({
+            template: 'Adding to cart'
+        });
+        cartsFactory.post({dish_id: dish_id}).$promise.then( function (response) {
+            $scope.cart = response;
+            $rootScope.cart_id = response.cart_id;
+            $ionicLoading.hide();
+        }, function (error) {
+            $ionicLoading.hide();
+            $scope.showAlert('Failure', error.statusText);
+        })
+    };
+
+    $scope.addToExistingCart = function (dish_id) {
+        $ionicLoading.show({
+            template: 'Adding to cart'
+        });
+        cartsFactory.put({id:$scope.cart.cart_id, dish_id: dish_id}, function (response) {
+            $ionicLoading.hide();
+        }, function (error) {
+            $ionicLoading.hide();
+            $scope.showAlert('Failure', error.statusText);
+        })
+    }
 
 });
