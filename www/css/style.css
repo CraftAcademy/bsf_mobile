@@ -8,6 +8,9 @@
 .item-menus {
   background-color: rgba(255,159,79,0.8);
 }
+.scroll{
+  transform: inherit !important;
+}
 
 .item-divider  {
   background-color: rgba(255,159,79,0.6);
