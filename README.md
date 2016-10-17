@@ -4,7 +4,7 @@
 
   Best slow food is an application we as a group of five students are developing during our bootcamp here in @CraftAcademy using Ruby on Rails.
 
-  We're designing an app to allow hungry folks to order dishes from various restaurants, and have them delivered to their home. Restaurant owners have complete CRUD actions. Checkout is run through Stripe to make sure everybody pays up.
+  We're designing an app to allow hungry folks to order dishes from various restaurants, and have them delivered to their home. Restaurant owners have complete CRUD actions.
 
   And if you're just looking for a certain style of food you can find restaurants of your choice using our app locating nearby restaurants on a map for you.
 
