@@ -1,26 +1,19 @@
 # Best Slow Food
 
-  This is our application for andriod and IOS use of our website [**Best Slow Food**](https://slow-food-august.herokuapp.com/)
+  This is our application for Android and iOS use of our website [**Best Slow Food**](https://slow-food-august.herokuapp.com/)
 
-  Best slow food is an application we as a group of 5 students are
-  developing during our bootcamp here in Craft Academy Gothenburg
-  using ruby on rails.
+  Best slow food is an application we as a group of five students are developing during our bootcamp here in @CraftAcademy using Ruby on Rails.
 
-  We're designing an app to make it easier for a restaurant owner and
-  a customer to said restaurant to communicate by having system where
-  you can both order or deliver food depending on your role.
+  We're designing an app to allow hungry folks to order dishes from various restaurants, and have them delivered to their home. Restaurant owners have complete CRUD actions. Checkout is run through Stripe to make sure everybody pays up.
 
-  And if you're just looking for a certain style of food you can
-  find restaurants of your choice using our app locating nearby
-  restaurants on a map for you.
+  And if you're just looking for a certain style of food you can find restaurants of your choice using our app locating nearby restaurants on a map for you.
 
   You can find our main repository [**Here**](https://github.com/CraftAcademy/sf-online-august)
 
 
-# Installation
+## Installation
 
-  To run this on your machine simply fork and clone this repository
-  to your computer and run these commands:
+  To run this on your machine simply fork and clone this repository to your computer and run these commands:
 
   ```
   $ npm install
@@ -29,11 +22,17 @@
   $ bower install
   ```
 
-# Built with
+## Built with
 
 * [Ionic](https://ionic.io/)
-* [Node.js](https://nodejs.org/en/)
+* [Cordova](https://cordova.apache.org)
 * [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1878955) as our planning tool
+
+## Libraries of Note
+
+* Angular Google Maps JS
+* ngTokenAuth
+* ngResource
 
 ## Contributors
 
